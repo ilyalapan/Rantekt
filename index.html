@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
 	<meta charset="utf-8">
 	<title>Рантект - проекты жилой и коммерческой недвижимости в Москве</title>
@@ -18,8 +19,94 @@
 	<!-- iOS Safari -->
 	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
 	<link rel="stylesheet" href="css/main.min.css">
+	<style>
+		.modal {
+			display: none;
+			position: fixed;
+			z-index: 999;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			background-color: rgb(0, 0, 0);
+			background-color: rgba(0, 0, 0, 0.9);
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+		}
+
+		.modal-content {
+			display: block;
+			max-height: 100%;
+			min-height: 90%;
+		}
+
+		.modal-content {
+			-webkit-animation-name: zoom;
+			animation-name: zoom;
+			-webkit-animation-duration: 0.6s;
+			animation-duration: 0.6s;
+		}
+
+		@-webkit-keyframes zoom {
+			from {
+				-webkit-transform: scale(0);
+				transform: scale(0)
+			}
+			to {
+				-webkit-transform: scale(1);
+				transform: scale(1)
+			}
+		}
+
+		@keyframes zoom {
+			from {
+				-webkit-transform: scale(0);
+				transform: scale(0)
+			}
+			to {
+				-webkit-transform: scale(1);
+				transform: scale(1)
+			}
+		}
+
+		.close {
+			position: absolute;
+			top: 15px;
+			right: 35px;
+			color: #f1f1f1;
+			font-size: 40px;
+			font-weight: bold;
+			-webkit-transition: 0.3s;
+			-o-transition: 0.3s;
+			transition: 0.3s;
+		}
+
+		.close:hover,
+		.close:focus {
+			color: #bbb;
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		@media only screen and (max-width: 700px) {
+			.modal-content {
+				width: 100%;
+			}
+		}
+	</style>
 </head>
+
 <body>
+	<!-- Модальное окно при нажатии на фотографию-->
+	<div id="myModal" class="modal">
+		<span class="close">&times;</span>
+		<img class="modal-content" id="img01">
+	</div>
 
 	<!-- Шапка -->
 	<header class="header" style="background-image: url('img/header__bg.jpg');">
@@ -46,7 +133,10 @@
 		<div class="wrapper">
 			<div class="proj__view">
 				<h2>Жилищный комплекс “Светлый Город”</h2>
-				<p class="sect__desc">На юго-западе Москвы, в одном из красивейших районов города, OOO "Rantekt Development | Investment" завершает строительство многофункционального жилого комплекса «Светлый город». В непосредственной близи от строящегося объекта находится обширный зеленый массив «Тропаревский лесопарк» – «легкие» юго-западного округа столицы. Строительство комплекса общей площадью 85 258 m² будет завершено в IV квартале 2009 года. Большая часть квартир и нежилых помещений уже реализована.</p>
+				<p class="sect__desc">На юго-западе Москвы, в одном из красивейших районов города, OOO "Rantekt Development | Investment" завершает строительство
+					многофункционального жилого комплекса «Светлый город». В непосредственной близи от строящегося объекта находится обширный
+					зеленый массив «Тропаревский лесопарк» – «легкие» юго-западного округа столицы. Строительство комплекса общей площадью
+					85 258 m² будет завершено в IV квартале 2009 года. Большая часть квартир и нежилых помещений уже реализована.</p>
 				<!-- Swiper -->
 				<div class="swiper-container swiper-container-1">
 					<div class="swiper-wrapper">
@@ -91,19 +181,23 @@
 				<div class="about__items">
 					<div class="about__item">
 						<span class="about__icon ai-1"></span>
-						<p class="about__text">два жилых дома с общей площадью квартир 44 100 m² (541 квартира с площадями от 45 m² до 150 m²) и нежилыми помещениями на первом этаже;</p>
+						<p class="about__text">два жилых дома с общей площадью квартир 44 100 m² (541 квартира с площадями от 45 m² до 150 m²) и нежилыми помещениями
+							на первом этаже;</p>
 					</div>
 					<div class="about__item">
 						<span class="about__icon ai-2"></span>
-						<p class="about__text">наземный гараж <br>на 272 машиноместа</p>
+						<p class="about__text">наземный гараж
+							<br>на 272 машиноместа</p>
 					</div>
 					<div class="about__item">
 						<span class="about__icon ai-3"></span>
-						<p class="about__text">супермаркет <br>общей площадью 1 002 m²</p>
+						<p class="about__text">супермаркет
+							<br>общей площадью 1 002 m²</p>
 					</div>
 					<div class="about__item">
 						<span class="about__icon ai-4"></span>
-						<p class="about__text">детский сад <br>на 75 мест</p>
+						<p class="about__text">детский сад
+							<br>на 75 мест</p>
 					</div>
 				</div>
 			</div>
@@ -114,15 +208,18 @@
 					<img src="img/map.png" alt="">
 				</div>
 				<div class="proj__char">
-					<h3>Особенные отличительные 
+					<h3>Особенные отличительные
 						<br>характеристики:
 					</h3>
 					<ul class="proj__list">
 						<li>возможность изменения планировок квартир по желанию клиента (свободная планировка с минимумом внутренних перегородок);</li>
-						<li>оптоволоконный кабель с возможностью подключения интернета, использования цифровой телефонной связи, телевидения и пр.;</li>
+						<li>оптоволоконный кабель с возможностью подключения интернета, использования цифровой телефонной связи, телевидения и
+							пр.;
+						</li>
 						<li>современные комфортные лифты;</li>
 						<li>видеонаблюдение внутри подъездов и по территории комплекса;большая придомовая территория;</li>
-						<li>необычайно щедрое, по меркам Москвы, озеленение свободных от застройки площадей 111 деревьями, 1311 кустарниками и 30 клумбами.</li>
+						<li>необычайно щедрое, по меркам Москвы, озеленение свободных от застройки площадей 111 деревьями, 1311 кустарниками и
+							30 клумбами.</li>
 					</ul>
 					<a href="#" class="proj__btn pdf__btn btn btn_accent">
 						<span>Презентация</span>
@@ -139,7 +236,10 @@
 		<div class="wrapper">
 			<div class="proj__view">
 				<h2>Жилищный комплекс “Миклухо-Маклая”</h2>
-				<p class="sect__desc">В 2009 году начинается строительство жилого комплекса на улице Миклухо-Маклая. Удачное расположение земельного участка дает хорошие возможности для успешной реализации данного проекта. Хорошо развитая транспортная инфраструктура, многочисленные  магазины, коммунально-бытовые учреждения, а также близость мест отдыха и развлечений, делает этот комплекс особо привлекательным. В соответствии с растущей потребностью покупателей, особое внимание уделено обеспечению безопасности жителей.</p>
+				<p class="sect__desc">В 2009 году начинается строительство жилого комплекса на улице Миклухо-Маклая. Удачное расположение земельного участка
+					дает хорошие возможности для успешной реализации данного проекта. Хорошо развитая транспортная инфраструктура, многочисленные
+					магазины, коммунально-бытовые учреждения, а также близость мест отдыха и развлечений, делает этот комплекс особо привлекательным.
+					В соответствии с растущей потребностью покупателей, особое внимание уделено обеспечению безопасности жителей.</p>
 				<!-- Swiper -->
 				<div class="swiper-container swiper-container-2">
 					<div class="swiper-wrapper">
@@ -193,11 +293,13 @@
 					</div>
 					<div class="about__item">
 						<span class="about__icon ai-5"></span>
-						<p class="about__text">коммерческие площади <br>на нежилом 1 этаже</p>
+						<p class="about__text">коммерческие площади
+							<br>на нежилом 1 этаже</p>
 					</div>
 					<div class="about__item">
 						<span class="about__icon ai-6"></span>
-						<p class="about__text">подземный паркинг <br>на 358 машиномест</p>
+						<p class="about__text">подземный паркинг
+							<br>на 358 машиномест</p>
 					</div>
 					<div class="about__item">
 						<span class="about__icon ai-7"></span>
@@ -212,13 +314,15 @@
 					<img src="img/map.png" alt="">
 				</div>
 				<div class="proj__char">
-					<h3>Особенные отличительные 
+					<h3>Особенные отличительные
 						<br>характеристики:
 					</h3>
 					<ul class="proj__list">
 						<li>возможность изменения планировок квартир по желанию клиента (свободная планировка с минимумом внутренних перегородок);</li>
 						<li>отличная система безопасности жильцов (видеонаблюдение, домофон, противо­пожарная система и система дымоудаления);</li>
-						<li>оптоволоконный кабель с возможностью подключения интернета, использования цифровой телефонной связи, телевидения и пр.;</li>
+						<li>оптоволоконный кабель с возможностью подключения интернета, использования цифровой телефонной связи, телевидения и
+							пр.;
+						</li>
 						<li>современные комфортные лифты;</li>
 						<li>видеонаблюдение внутри подъездов и по территории комплекса;</li>
 						<li>большая придомовая территория;</li>
@@ -249,13 +353,22 @@
 				</a>
 				<div class="contacts__content">
 					<p>117997, г. Москва, ул. Вавилова д. 69/75, офис 912</p>
-					<p>тел <a href="tel:+7 (495) 938 26 04">+7 (495) 938 26 04</a></p>
-					<p>факс <a href="tel:+7 (495) 938 26 14">+7 (495) 938 26 14</a></p>
-					<p><a href="mailto:info@rantekt.ru">info@rantekt.ru</a></p>
-					<p><a href="http://www.rantekt.ru/" target="_blank">www.rantekt.ru</a></p>
+					<p>тел
+						<a href="tel:+7 (495) 938 26 04">+7 (495) 938 26 04</a>
+					</p>
+					<p>факс
+						<a href="tel:+7 (495) 938 26 14">+7 (495) 938 26 14</a>
+					</p>
+					<p>
+						<a href="mailto:info@rantekt.ru">info@rantekt.ru</a>
+					</p>
+					<p>
+						<a href="http://www.rantekt.ru/" target="_blank">www.rantekt.ru</a>
+					</p>
 				</div>
 			</div>
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2249.381202638364!2d37.54880421592779!3d55.6823599805346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54cec3d82329b%3A0x89970573914f106d!2z0YPQuy4g0JLQsNCy0LjQu9C-0LLQsCwgNjkvNzUsIDkxMiwg0JzQvtGB0LrQstCwLCDQoNC-0YHRgdC40Y8sIDExNzMzNQ!5e0!3m2!1sru!2sua!4v1523540029119" style="border:0" allowfullscreen></iframe>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2249.381202638364!2d37.54880421592779!3d55.6823599805346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54cec3d82329b%3A0x89970573914f106d!2z0YPQuy4g0JLQsNCy0LjQu9C-0LLQsCwgNjkvNzUsIDkxMiwg0JzQvtGB0LrQstCwLCDQoNC-0YHRgdC40Y8sIDExNzMzNQ!5e0!3m2!1sru!2sua!4v1523540029119"
+			 style="border:0" allowfullscreen></iframe>
 		</div>
 		<div class="copyright">
 			<p>© 2018 Pahtekt Development | Investment</p>
@@ -272,6 +385,42 @@
 
 
 	<script src="js/scripts.min.js"></script>
+	<script>
+		// До бабеля
+
+		// const modal = document.querySelector('#myModal')
+
+		// document.querySelectorAll('.slide__photo img').forEach(img => {
+		// 	img.addEventListener('click', () => {
+		// 		console.log('click')
+		// 		const modalImg = document.querySelector("#img01")
+		// 		modal.style.display = "flex"
+		// 		modalImg.src = img.src
+		// 	})
+		// })
+
+		// document.querySelector(".close").addEventListener('click', close => {
+		// 	modal.style.display = "none";
+		// })
+
+		'use strict';
+
+		var modal = document.querySelector('#myModal');
+
+		document.querySelectorAll('.slide__photo img').forEach(function (img) {
+			img.addEventListener('click', function () {
+				console.log('click');
+				var modalImg = document.querySelector("#img01");
+				modal.style.display = "flex";
+				modalImg.src = img.src;
+			});
+		});
+
+		document.querySelector(".close").addEventListener('click', function (close) {
+			modal.style.display = "none";
+		});
+	</script>
 
 </body>
+
 </html>
