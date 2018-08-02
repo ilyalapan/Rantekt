@@ -19,7 +19,7 @@
 <meta name="theme-color" content="#ffffff">
 
 	<link rel="stylesheet" href="css/main.min.css">
-		<style>
+	<style>
 		.modal {
 			display: none;
 			position: fixed;
@@ -94,10 +94,7 @@
 	</style>
 </head>
 <body>
-	<div id="myModal" class="modal">
-		<span class="close">&times;</span>
-		<img class="modal-content" id="img01">
-	</div>
+
 	<!-- Шапка -->
 	<header class="header" style="background-image: url('img/header__bg.png');">
 		<div class="header__head">
@@ -105,8 +102,12 @@
 				<div class="h-head__content">
 					<div class="logo">
 						<a href="index.html" class="logo__link">
-							<img src="img/logo.jpg" alt="">
+							<img src="img/logo.png" alt="">
 						</a>
+					</div>
+					<div class="our-proj__btns">
+						<a href="#to-proj-2" class="our-proj__btn">Миклухо маклая</a>
+						<a href="#to-proj-1" class="our-proj__btn">светлый город</a>
 					</div>
 					<div class="header__contacts">
 						<p class="email__wrap">
@@ -122,25 +123,27 @@
 							</span>
 							+ 7 (938) 445-25-87
 						</a>
-						<a href="#to-contacts" class="to-contacts__btn btn btn_accent">Контакты</a>
 					</div>
 				</div>
 			</div>
 		</div>
+		
 		<div class="wrapper">
 			<div class="header__content">
 				<div class="border-box"></div>
 				<div class="header__wrap">
-					<h1 class="h1">Рантект</h1>
+					<div class="h1__wrap">
+						<h1 class="h1">Рантект</h1>
+					</div>
 					<p class="h1__desc">Проекты жилой и коммерческой 
 						<br>недвижимости в Москве
 					</p>
-					<div class="our-projects">
-						<p class="our-proj__title">Наши проекты</p>
-						<div class="our-proj__btns">
-							<a href="#to-proj-2" class="our-proj__btn">Миклухо маклая</a>
-							<a href="#to-proj-1" class="our-proj__btn">светлый город</a>
-						</div>
+					<p class="header__desc">На продукцию и работы, произведенные нами, Мы даём гарантию -три года. По условиям гарантии, если 
+						<br>что-либо произойдет с забором, Мы обязуемся в ближайшее время приехать и отремонтировать все 
+						<br>бесплатно. Мы уверены в качестве продукции, которую продаем.
+					</p>
+					<div class="to-contacts-wrap">
+						<a href="#to-contacts" class="to-contacts-btn btn btn_white">Контакты</a>
 					</div>
 				</div>
 			</div>
@@ -434,6 +437,9 @@
 			modal.style.display = "none";
 		});
 	</script>
+
+</body>
+</html>
 
 </body>
 </html>
