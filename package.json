@@ -1,16 +1,12 @@
 {
-  "name": "optimizedhtml",
-  "version": "3.0.0",
-  "description": "OptimizedHTML - Start HTML Template",
-  "main": "server.js",
+  "name": "rantekt",
+  "version": "1.0.0",
+  "description": "Rantekt.ru",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
     "dev": "gulp",
-    "build": "gulp build",
-    "heroku-postbuild": "yarn build"
+    "build": "gulp build"
   },
-  "author": "WebDesign Master",
-  "license": "ISC",
   "dependencies": {
     "browser-sync": "^2.23.6",
     "del": "^3.0.0",
